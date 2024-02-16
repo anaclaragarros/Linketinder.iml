@@ -11,7 +11,6 @@ class CadastroSpec extends Specification {
 
         then:
         assert cadastro.listaPf.size() == 1
-        // Adicione mais verificações conforme necessário
     }
 
     def "Teste criar Pessoa PJ"() {
@@ -23,7 +22,6 @@ class CadastroSpec extends Specification {
 
         then:
         assert cadastro.listaPj.size() == 1
-        // Adicione mais verificações conforme necessário
     }
 
     def "Teste criar Postagem"() {
@@ -35,7 +33,6 @@ class CadastroSpec extends Specification {
 
         then:
         assert cadastro.listaPostagens.size() == 1
-        // Adicione mais verificações conforme necessário
     }
 
     def "Teste listar Postagens"() {
@@ -47,8 +44,7 @@ class CadastroSpec extends Specification {
         cadastro.listarPostagens()
 
         then:
-        // Você pode usar Mocks para verificar a chamada de métodos ou verificar a saída no console
-        // Aqui, usaremos apenas uma assertiva básica
+
         assert true
     }
 
@@ -61,7 +57,6 @@ class CadastroSpec extends Specification {
         cadastro.curtirPostagem()
 
         then:
-        // Adicione verificações conforme necessário
         assert true
     }
 }
