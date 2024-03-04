@@ -1,75 +1,81 @@
-class PessoaPf  { private String nome;
-        private String email;
-        private String CPF;
-        private int idade;
-        private String Estado;
-        private String CEP;
-        private String DescricaoPessoal;
+class PessoaPf {
+    private String nome
+    private String email
+    private String CPF
+    private int idade
+    private String Estado
+    private String CEP
+    private String DescricaoPessoal
 
-        public PessoaPf() {
-        }
+    PessoaPf() {
+    }
 
-        public String getNome() {
-            return nome;
-        }
+    String getNome() {
+        return nome
+    }
 
-        public void setNome(String nome) {
-            this.nome = nome;
+    void setNome(String nome) {
+        this.nome = nome
+    }
 
-        }
-        public String getEmail() {
-            return email;
-        }
+    String getEmail() {
+        return email
+    }
 
-        public void setEmail() {
-            this.email = email;
-        }
-        public String getCPF() {
-            return CPF;
-        }
+    void setEmail(String email) {
+        this.email = email
+    }
 
-        public void setCPF(String cpf) {
-            this.CPF = CPF;
-        }
+    String getCPF() {
+        return CPF
+    }
 
-        public int getIdade() {
-            return idade;
-        }
+    void setCPF(String cpf) {
+        this.CPF = CPF
+    }
 
-        public void setIdade(int idade) {
-            this.idade = idade;
-        }
-        public String getEstado() {
-            return Estado;
-        }
+    int getIdade() {
+        return idade
+    }
 
-        public void setEstado(String estado) {
-            this.Estado = Estado;
-        }
-        public String getCEP() {
-            return CEP;
-        }
-        public void setCEP (String CEP) {
-            this.CEP = CEP;
-        }
+    void setIdade(int idade) {
+        this.idade = idade
+    }
 
-        public String getDescricaoPessoale() {
-            return DescricaoPessoal;
-        }
+    String getEstado() {
+        return Estado
+    }
 
-        public void setDescricaoPessoal(String DescricaoPessoal) {
-            this.DescricaoPessoal = DescricaoPessoal;
-        }
-        @Override
-        public String toString() {
-            return "CadastroPf{" +
-                    "nome='" + nome + '\'' +
-                    ", email='" + email + '\'' +
-                    ", CPF=" + CPF +
-                    ", Idade=" + idade +
-                    ", Estado='" + Estado + '\'' +
-                    ", CEP=" + CEP +
-                    ", Descrição Pessoal =" + getDescricaoPessoale() +
-                    '}';
-        }
+    void setEstado(String estado) {
+        this.Estado = Estado
+    }
+
+    String getCEP() {
+        return CEP
+    }
+
+    void setCEP(String CEP) {
+        this.CEP = CEP
+    }
+
+    String getDescricaoPessoale() {
+        return DescricaoPessoal
+    }
+
+    void setDescricaoPessoal(String DescricaoPessoal) {
+        this.DescricaoPessoal = DescricaoPessoal
+    }
+
+    @Override
+    String toString() {
+        return "CadastroPf{" +
+                "nome='" + nome + '\'' +
+                ", email='" + email + '\'' +
+                ", CPF=" + CPF +
+                ", Idade=" + idade +
+                ", Estado='" + Estado + '\'' +
+                ", CEP=" + CEP +
+                ", Descrição Pessoal =" + getDescricaoPessoale() +
+                '}'
+    }
 }

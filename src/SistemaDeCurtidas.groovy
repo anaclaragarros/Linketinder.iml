@@ -1,16 +1,16 @@
-public class SistemaCurtidas {
+class SistemaCurtidas {
 
-    private Map<Integer, Integer> curtidasPorPostagem;
+    private Map<Integer, Integer> mapaCurtidas = [:]
 
-    public SistemaCurtidas() {
-        this.curtidasPorPostagem = new HashMap<>();
+    void curtirPostagem(int idPostagem) {
+        if (mapaCurtidas.containsKey(idPostagem)) {
+            mapaCurtidas.put(idPostagem, mapaCurtidas.get(idPostagem) + 1)
+        } else {
+            mapaCurtidas.put(idPostagem, 1)
+        }
     }
 
-    public void curtirPostagem(int idPostagem) {
-        curtidasPorPostagem.put(idPostagem, curtidasPorPostagem.getOrDefault(idPostagem, 0) + 1);
-    }
-
-    public int getCurtidas(int idPostagem) {
-        return curtidasPorPostagem.getOrDefault(idPostagem, 0);
+    int obterCurtidas(int idPostagem) {
+        return mapaCurtidas.getOrDefault(idPostagem, 0)
     }
 }

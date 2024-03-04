@@ -1,71 +1,73 @@
 class PessoaPj {
-    private String nome;
-    private String emailCorporativo;
-    private String CNPJ;
-    private String pais;
-    private String Estado;
-    private String CEP;
-    private String DescricaoDaEmpresa;
+    private String nome
+    private String emailCorporativo
+    private String CNPJ
+    private String pais
+    private String Estado
+    private String CEP
+    private String DescricaoDaEmpresa
 
-    public PessoaPj() {
-    }
-
-    public void setEmailCorporativo(String emailCorporativo) {
+    PessoaPj() {
     }
 
-    public String getNome() {
-        return nome;
+    String getNome() {
+        return nome
     }
 
-    public void setNome(String nome) {
-        this.nome = nome;
-
-    }
-    public String getemailCorporativo() {
-        return emailCorporativo;
+    void setNome(String nome) {
+        this.nome = nome
     }
 
-    public void setemailCorporativo(String emailCorporativo) {
-        this.emailCorporativo = emailCorporativo;
-    }
-    public String getCNPJ() {
-        return CNPJ;
+    String getemailCorporativo() {
+        return emailCorporativo
     }
 
-    public void setCNPJ(String CNPJ) {
-        this.CNPJ = CNPJ;
+    void setemailCorporativo(String emailCorporativo) {
+        this.emailCorporativo = emailCorporativo
     }
 
-    public String getPais() {
-        return pais;
+    String getCNPJ() {
+        return CNPJ
     }
 
-    public void setPais(String pais) {
-        this.pais = pais;
-    }
-    public String getEstado() {
-        return Estado;
+    void setCNPJ(String CNPJ) {
+        this.CNPJ = CNPJ
     }
 
-    public void setEstado(String estado) {
-        this.Estado = Estado;
-    }
-    public String getCEP() {
-        return CEP;
-    }
-    public void setCEP(String CEP) {
-        this.CEP = CEP;
+    String getPais() {
+        return pais
     }
 
-    public String getDescricaoDaEmpresa() {
-        return DescricaoDaEmpresa;
+    void setPais(String pais) {
+        this.pais = pais
     }
 
-    public void setDescricaoDaEmpresa(String DescricaoDaEmpresa) {
-        this.DescricaoDaEmpresa = DescricaoDaEmpresa;
+    String getEstado() {
+        return Estado
     }
+
+    void setEstado(String estado) {
+        this.Estado = Estado
+    }
+
+    String getCEP() {
+        return CEP
+    }
+
+    void setCEP(String CEP) {
+        this.CEP = CEP
+    }
+
+    String getDescricaoDaEmpresa() {
+        return DescricaoDaEmpresa
+    }
+
+    void setDescricaoDaEmpresa(String DescricaoDaEmpresa) {
+        this.DescricaoDaEmpresa = DescricaoDaEmpresa
+    }
+
     @Override
-    public String toString() {
+    String toString() {
         return "CadastroPj{" +
                 "nome='" + nome + '\'' +
                 ", email Corporativo ='" + emailCorporativo + '\'' +
@@ -74,6 +76,6 @@ class PessoaPj {
                 ", Estado='" + Estado + '\'' +
                 ", CEP=" + CEP +
                 ", Descrição da Empresa =" + getDescricaoDaEmpresa() +
-                '}';
+                '}'
     }
 }
