@@ -1,156 +1,16 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>LinkeTinder</title>
-    <style>
-        body {
-            font-family: "Moirai One", system-ui;
-            font-weight: 400;
-            font-style: normal;
-            display: flex;
-            align-items: stretch;
-            height: 100vh;
-            margin: 0;
-            font-family: Arial, sans-serif;
-            flex-direction: column;
-            background-color: #f0f0f0;
-        }
+    <link rel="stylesheet" type="text/css" href="css/estilo.css">
 
-        #header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            background-color: #333;
-            padding: 10px;
-            color: #fff;
-            position: relative;
-            z-index: 2;
-        }
-
-        #menuIcon {
-            cursor: pointer;
-            font-size: 24px;
-        }
-
-        #logo {
-            font-weight: bold;
-            font-size: 24px;
-            font-family: Didot, serif;
-            text-align: center;
-            flex-grow: 1;
-        }
-
-        #searchBar {
-            width: 200px;
-            padding: 8px;
-            margin-left: auto;
-            border: 1px solid #000;
-            border-radius: 5px;
-            background-size: 20px;
-        }
-
-        #sidebar {
-            height: 0;
-            background-color: rgba(51, 51, 51, 0.9);
-            color: #fff;
-            overflow: hidden;
-            transition: height 0.3s;
-            position: absolute;
-            top: 60px;
-            left: 0;
-            right: 0;
-            z-index: 1;
-        }
-
-        #userButtons {
-            display: flex;
-            flex-direction: column;
-            margin-top: 20px;
-        }
-
-        .userButton {
-            background: none;
-            border: none;
-            cursor: pointer;
-            font-size: 16px;
-            margin: 10px 0;
-            padding: 15px 20px;
-            color: #fff;
-            font-weight: bold;
-            border-radius: 5px;
-            transition: background 0.3s;
-        }
-
-        .userButton:hover {
-            background-color: #555;
-        }
-
-        #content {
-            flex: 1;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            max-width: 80%;
-            margin: 0 auto;
-            padding: 20px;
-            box-sizing: border-box;
-            position: relative;
-            z-index: 0;
-        }
-
-        #slogan {
-            font-size: 20px;
-            color: #333;
-            text-align: left;
-            margin-bottom: 20px;
-        }
-
-        #slogan span {
-            font-size: 600%;
-            font-weight: 600;
-        }
-
-        .box {
-            margin-top: 26px;
-            padding: 10px;
-            border-radius: 10px;
-            text-align: left;
-            width: 100%;
-        }
-
-        .box-candidate {
-            background-color: #333;
-            color: #fff;
-        }
-
-        .box-company {
-            background-color: #e74c3c;
-            color: #fff;
-        }
-
-        .formulario {
-            max-width: 400px;
-            text-align: center;
-        }
-
-        @media (max-width: 768px) {
-            #sidebar {
-                height: 100%;
-            }
-
-            #header {
-                padding: 10px;
-            }
-
-            #content {
-                max-width: 100%;
-            }
-        }
-    </style>
 </head>
+
 <body>
+
 <div id="header">
     <div id="menuIcon">&#9776;</div>
     <div id="logo">LinkeTinder</div>
@@ -192,24 +52,8 @@
     </div>
 </div>
 
-<script>
-    document.getElementById("menuIcon").addEventListener("click", toggleMenu);
+<script src="js/telaPrincipal.js"></script>
 
-    function toggleMenu() {
-        var sidebar = document.getElementById("sidebar");
-        sidebar.style.height = sidebar.style.height === "0px" ? "100%" : "0";
-    }
-
-    function abrirFormulario(tipo) {
-        if (tipo === 'Cadastro') {
-            window.open('http://localhost:63342/linkhtml.iml/src/main/TelaCadastro.html?_ijt=s0850t9f75rvqp1loudu4i2sil&_ij_reload=RELOAD_ON_SAVE');
-        } else if (tipo === 'Login') {
-            window.open('http://localhost:63342/linkhtml.iml/src/main/TelaDeLogin.html?_ijt=u5ukaiglgrpb452fmad3d1t0lf&_ij_reload=RELOAD_ON_SAVE');
-        } else {
-            window.open(`${tipo}.html`);
-        }
-    }
-
-</script>
 </body>
+
 </html>
