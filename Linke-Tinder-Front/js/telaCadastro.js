@@ -19,5 +19,5 @@
         }
 
         function salvarCadastro(tipo) {
-            alert('Dados salvos!'); // Aviso simples para demonstração.
+            alert('Dados salvos!');
         }

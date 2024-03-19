@@ -1,74 +1,90 @@
-  // Simulação de perfis
-  let profiles = [
-    { name: 'John Doe', age: 25, email: 'john.doe@example.com', image: 'profile_image1.jpg' },
-    { name: 'Jane Smith', age: 28, email: 'jane.smith@example.com', image: 'profile_image2.jpg' },
-    // Adicione mais perfis conforme necessário
-  ];
+ let profiles = [
+            { name: 'João', iade: 25, Descrição: 'Descrição pessoal do usuário 1', skills: ['HTML', 'CSS', 'JavaScript'] },
+            { name: 'Maria', idade: 28, Descrição: 'Descrição pessoal do usuário 2', skills: ['Python', 'Java', 'React'] },
+        ];
 
-  let currentProfileIndex = 0;
+        let currentProfileIndex = 0;
 
-  function displayProfile() {
-    const profileView = document.getElementById('profileView');
-    const profileNameElement = document.getElementById('profileName');
-    const profileAgeElement = document.getElementById('profileAge');
-    const profileEmailElement = document.getElementById('profileEmail');
+        function displayProfile() {
+            const currentProfile = profiles[currentProfileIndex];
+            const profileNameElement = document.getElementById('profileName');
+            const profileDescriptionElement = document.getElementById('profileDescriptionText');
+            const profileSkillsElement = document.getElementById('profileSkillsText');
 
-    const currentProfile = profiles[currentProfileIndex];
+            profileNameElement.textContent = 'Usuário Censurado'; // Nome censurado
+            profileDescriptionElement.textContent = currentProfile.description; // Descrição pessoal
+            profileSkillsElement.textContent = currentProfile.skills.join(', '); // Skills
 
-    profileNameElement.textContent = currentProfile.name;
-    profileAgeElement.textContent = currentProfile.age;
-    profileEmailElement.textContent = currentProfile.email;
+            document.getElementById('profileView').style.display = 'block';
+        }
 
-    profileView.style.display = 'block';
-  }
+        function likeProfile() {
+            alert(`Perfil curtido: ${profiles[currentProfileIndex].name}`);
+            nextProfile();
+        }
 
-  function likeProfile() {
-    alert(`Perfil curtido: ${profiles[currentProfileIndex].name}`);
-    nextProfile();
-  }
+        function skipProfile() {
+            alert(`Perfil passado: ${profiles[currentProfileIndex].name}`);
+            nextProfile();
+        }
 
-  function skipProfile() {
-    alert(`Perfil passado: ${profiles[currentProfileIndex].name}`);
-    nextProfile();
-  }
+        function deleteProfile() {
+            const deletedProfileName = profiles[currentProfileIndex].name;
+            profiles = profiles.filter((profile, index) => index !== currentProfileIndex);
+            alert(`Perfil excluído: ${deletedProfileName}`);
+            nextProfile();
+        }
 
-  function deleteProfile() {
-    const deletedProfileName = profiles[currentProfileIndex].name;
-    profiles = profiles.filter((profile, index) => index !== currentProfileIndex);
-    alert(`Perfil excluído: ${deletedProfileName}`);
-    nextProfile();
-  }
+        function nextProfile() {
+            currentProfileIndex++;
 
-  function nextProfile() {
-    currentProfileIndex++;
+            if (currentProfileIndex < profiles.length) {
+                displayProfile();
+            } else {
+                alert('Não há mais perfis disponíveis.');
+                resetProfiles();
+            }
+        }
 
-    if (currentProfileIndex < profiles.length) {
-      displayProfile();
-    } else {
-      alert('Não há mais perfis disponíveis.');
-      resetProfiles();
-    }
-  }
+        function resetProfiles() {
+            currentProfileIndex = 0;
+            document.getElementById('profileView').style.display = 'none';
+        }
 
-  function resetProfiles() {
-    currentProfileIndex = 0;
-    document.getElementById('profileView').style.display = 'none';
-  }
+        const barChartData = {
+            labels: ['JavaScript', 'HTML', 'CSS', 'Python', 'Java', 'React'],
+            datasets: [{
+                label: 'Quantidade',
+                data: [12, 19, 3, 5, 2, 3],
+                backgroundColor: ['rgba(255, 99, 132, 0.8)', 'rgba(54, 162, 235, 0.8)', 'rgba(255, 206, 86, 0.8)',
+                    'rgba(75, 192, 192, 0.8)', 'rgba(153, 102, 255, 0.8)', 'rgba(255, 159, 64, 0.8)'
+                ],
+                borderColor: [
+                    'rgba(255, 99, 132, 1)',
+                    'rgba(54, 162, 235, 1)',
+                    'rgba(255, 206, 86, 1)',
+                    'rgba(75, 192, 192, 1)',
+                    'rgba(153, 102, 255, 1)',
+                    'rgba(255, 159, 64, 1)'
+                ],
+                borderWidth: 1
+            }]
+        };
 
-  function showProfileInfo() {
-    const profileNameElement = document.getElementById('profileName');
-    const profileEmailElement = document.getElementById('profileEmail');
+        const skillsChartCtx = document.getElementById('skillsChart').getContext('2d');
 
-    profileNameElement.addEventListener('mouseover', () => {
-      alert(`Nome: ${profiles[currentProfileIndex].name}`);
-    });
+        const skillsChart = new Chart(skillsChartCtx, {
+            type: 'bar',
+            data: barChartData,
+            options: {
+                scales: {
+                    yAxes: [{
+                        ticks: {
+                            beginAtZero: true
+                        }
+                    }]
+                }
+            }
+        });
 
-    profileEmailElement.addEventListener('mouseover', () => {
-      alert(`E-mail: ${profiles[currentProfileIndex].email}`);
-    });
-  }
-
-  // Exibe o primeiro perfil ao carregar a página
-  displayProfile();
-  // Adiciona eventos de mouseover para exibir informações do perfil
-  showProfileInfo();
+        displayProfile();

@@ -6,16 +6,27 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>LinkeTinder-like Profile</title>
     <link rel="stylesheet" type="text/css" href="css/estilo.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+    </style>
 </head>
 
 <body>
-
 <div id="profileView">
     <h2>Perfil</h2>
-    <img src="profile_image.jpg" alt="Imagem do Perfil">
-    <p>Nome: <span id="profileName">John Doe</span></p>
-    <p>Idade: <span id="profileAge">25</span></p>
-    <p>E-mail: <span id="profileEmail">john.doe@example.com</span></p>
+    <p>Nome: <span id="profileName">Usuário Censurado</span></p>
+    <p id="profileDescription">Descrição Pessoal: <span id="profileDescriptionText">Descrição pessoal do usuário</span></p>
+    <p id="profileSkills">Skills: <span id="profileSkillsText">HTML, CSS, JavaScript</span></p>
+    <div class="skillsChartContainer">
+        <canvas id="skillsChart" class="skillsChart"></canvas>
+    </div>
     <div id="actionButtons">
         <button onclick="likeProfile()">Curtir</button>
         <button onclick="skipProfile()">Passar</button>
@@ -23,8 +34,7 @@
     </div>
 </div>
 
-<script src="js/perfis.js"></script>
-
 </body>
+<script src="js/perfis.js"></script>
 
 </html>
